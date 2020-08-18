@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true"/>
+
+        <service id="sylius_labels.page.admin.order.index_page" class="Tests\MangoSylius\LabelsPlugin\Behat\Page\Admin\Order\IndexPage" parent="sylius.behat.page.admin.order.index" public="true"/>
+        <service id="sylius_labels.page.admin.order.show_page" class="Tests\MangoSylius\LabelsPlugin\Behat\Page\Admin\Order\ShowPage" parent="sylius.behat.page.admin.order.show" public="true"/>
+
+        <service id="sylius_labels.behat.context.ui.admin.managing_orders" class="Tests\MangoSylius\LabelsPlugin\Behat\Context\Ui\Admin\ManagingOrdersContext">
+            <argument type="service" id="sylius_labels.page.admin.order.index_page"/>
+            <argument type="service" id="sylius_labels.page.admin.order.show_page"/>
+        </service>
+
+        <service id="sylius_labels.behat.context.ui.admin.managing_labels" class="Tests\MangoSylius\LabelsPlugin\Behat\Context\Ui\Admin\ManagingLabelsContext">
+            <argument type="service" id="mangoweb_labels_plugin.repository.label"/>
+        </service>
+    </services>
+</container>
