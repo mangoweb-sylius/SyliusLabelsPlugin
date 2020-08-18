@@ -1,0 +1,15 @@
+<div class="mango-labels-select ui fluid dropdown selection multiple" data-order-id="{{ order.id }}">
+    <input type="hidden" name="country" value="{{ (order.labels|map(label => "#{label.id}"))|join(',') }}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{{ 'mangoweb_labels_plugin.ui.labels'|trans }}</div>
+    <div class="menu">
+        {% for label in mango_labels() %}
+            <div class="item" data-value="{{ label.id }}">
+                <svg height="15" width="15">
+                    <circle cx="50%" cy="50%" r="50%" fill="{{ label.color }}" />
+                </svg>
+                {{ label.name }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

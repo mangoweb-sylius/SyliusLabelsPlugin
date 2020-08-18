@@ -1,0 +1,3 @@
+mango_labels_plugin:
+    resource: "@MangoSyliusLabelsPlugin/Resources/config/routing.yml"
+    prefix: /admin

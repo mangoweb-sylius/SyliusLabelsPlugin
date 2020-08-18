@@ -1,0 +1,21 @@
+mangoweb_labels_plugin_label:
+    resource: |
+        alias: mangoweb_labels_plugin.label
+        section: admin
+        path: label
+        templates: SyliusAdminBundle:Crud
+        redirect: update
+        grid: mangoweb_labels_plugin_label
+        vars:
+            all:
+                header: mango-sylius.admin.label.header
+                subheader: mango-sylius.admin.label.subheader
+                templates:
+                    form: '@MangoSyliusLabelsPlugin/Admin/Label/_form.html.twig'
+    type: sylius.resource
+
+mangoweb_labels_plugin_label_save_order:
+    path: /ajax-save-labels/order/{orderId}
+    methods: post
+    defaults:
+        _controller: MangoSylius\LabelsPlugin\Controller\AjaxLabelsController::saveOrderLabels

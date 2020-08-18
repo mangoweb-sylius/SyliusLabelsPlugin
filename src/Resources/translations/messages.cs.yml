@@ -1,0 +1,11 @@
+mango-sylius:
+    admin:
+        label:
+            menu: Štítky
+            header: Štítky
+            subheader: Správa štítků
+            name: Název
+            color: Barva
+mangoweb_labels_plugin:
+    ui:
+        labels: Štítky

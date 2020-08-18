@@ -1,0 +1,11 @@
+mango-sylius:
+    admin:
+        label:
+            menu: Labels
+            header: Labels
+            subheader: Manage lables
+            name: Name
+            color: Color
+mangoweb_labels_plugin:
+    ui:
+        labels: Labels
